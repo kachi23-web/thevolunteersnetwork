@@ -1,0 +1,61 @@
+{
+  "name": "Charitics - Making a Difference Together",
+  "short_name": "Charitics",
+  "description": "Join us in making a positive impact. Support our charitable causes, volunteer opportunities, and community initiatives.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff5722",
+  "orientation": "portrait-primary",
+  "categories": ["lifestyle", "social"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/TVN-Logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-narrow.jpg",
+      "sizes": "640x1136",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Donate Now",
+      "short_name": "Donate",
+      "description": "Make a donation to support our causes",
+      "url": "/donations",
+      "icons": [
+        {
+          "src": "/vite.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "View Events",
+      "short_name": "Events",
+      "description": "See upcoming charity events",
+      "url": "/events",
+      "icons": [
+        {
+          "src": "/vite.svg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

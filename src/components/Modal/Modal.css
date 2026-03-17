@@ -1,0 +1,115 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 37, 47, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: clamp(15px, 1.58vw, 30px);
+  animation: fadeIn 0.4s ease;
+  backdrop-filter: blur(5px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  position: relative;
+  background: var(--white);
+  border-radius: clamp(12px, 1.05vw, 20px);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: clamp(15px, 1.26vw, 24px);
+  right: clamp(15px, 1.26vw, 24px);
+  background: rgba(235, 83, 16, 0.9);
+  color: var(--white);
+  border: none;
+  width: clamp(40px, 2.63vw, 50px);
+  height: clamp(40px, 2.63vw, 50px);
+  border-radius: 50%;
+  font-size: clamp(20px, 1.47vw, 28px);
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  z-index: 1001;
+  font-weight: 300;
+  box-shadow: 0 4px 15px rgba(235, 83, 16, 0.3);
+}
+
+.modal-close:hover {
+  background: var(--ul-black);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 8px 25px rgba(30, 37, 47, 0.4);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: clamp(10px, 1.05vw, 20px);
+  }
+
+  .modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+    border-radius: clamp(8px, 0.84vw, 16px);
+  }
+
+  .modal-close {
+    width: clamp(36px, 2.31vw, 44px);
+    height: clamp(36px, 2.31vw, 44px);
+    font-size: clamp(18px, 1.26vw, 24px);
+    top: clamp(12px, 1.05vw, 20px);
+    right: clamp(12px, 1.05vw, 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-overlay {
+    padding: clamp(5px, 0.79vw, 15px);
+  }
+
+  .modal-content {
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: clamp(0px, 0.53vw, 10px);
+  }
+
+  .modal-close {
+    width: clamp(32px, 2.1vw, 40px);
+    height: clamp(32px, 2.1vw, 40px);
+    font-size: clamp(16px, 1.05vw, 20px);
+    top: clamp(10px, 0.84vw, 16px);
+    right: clamp(10px, 0.84vw, 16px);
+  }
+}

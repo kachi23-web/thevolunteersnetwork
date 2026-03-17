@@ -1,0 +1,119 @@
+/* TeamMemberCard styles */
+.team-member-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.team-member-card-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.team-member-card-content {
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-member-card-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.team-member-card-position {
+  font-size: 0.9375rem;
+  color: #ff5722;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.team-member-card-bio {
+  font-size: 0.9375rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.team-member-card-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.team-member-card-social a {
+  color: #666;
+  font-size: 1.125rem;
+  transition: color 0.3s ease;
+}
+
+.team-member-card-social a:hover {
+  color: #ff5722;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .team-member-card-image {
+    height: 240px;
+  }
+
+  .team-member-card-content {
+    padding: 1.25rem;
+  }
+
+  .team-member-card-name {
+    font-size: 1.125rem;
+  }
+
+  .team-member-card-position {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-member-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .team-member-card-image {
+    height: 220px;
+  }
+
+  .team-member-card-content {
+    padding: 1rem;
+  }
+
+  .team-member-card-name {
+    font-size: 1rem;
+  }
+
+  .team-member-card-bio {
+    font-size: 0.875rem;
+  }
+
+  .team-member-card-social {
+    gap: 0.75rem;
+  }
+
+  .team-member-card-social a {
+    font-size: 1rem;
+  }
+}

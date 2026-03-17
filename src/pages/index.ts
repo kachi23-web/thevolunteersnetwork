@@ -1,0 +1,16 @@
+// Export all page components from this directory
+export { HomePage } from './HomePage'
+export { AboutPage } from './AboutPage'
+export { ContactPage } from './ContactPage'
+export { DonationsPage } from './DonationsPage'
+export { DonationDetailsPage } from './DonationDetailsPage'
+export { EventsPage } from './EventsPage'
+export { BlogPage } from './BlogPage'
+export { BlogDetailsPage } from './BlogDetailsPage'
+export { ServicesPage } from './ServicesPage'
+export { ProjectsPage } from './ProjectsPage'
+export { TeamPage } from './TeamPage'
+export { TeamDetailsPage } from './TeamDetailsPage'
+export { PricingPage } from './PricingPage'
+export { FAQPage } from './FAQPage'
+

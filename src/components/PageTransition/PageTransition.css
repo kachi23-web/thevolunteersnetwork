@@ -1,0 +1,72 @@
+/* Page transition styles */
+.page-transition-wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Loading state styles */
+.page-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.spinner-ring {
+  width: 100%;
+  height: 100%;
+  border: 4px solid rgba(var(--primary-color-rgb), 0.1);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 16px;
+  color: var(--text-color);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .spinner-ring {
+    animation: none;
+    border-top-color: var(--primary-color);
+  }
+  
+  .page-transition-wrapper {
+    transition: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .page-loading {
+    background: rgba(0, 0, 0, 0.95);
+  }
+  
+  .loading-text {
+    color: #ffffff;
+  }
+}

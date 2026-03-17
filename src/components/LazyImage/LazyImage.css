@@ -1,0 +1,22 @@
+/* Lazy Image Styles */
+.lazy-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.lazy-image.loading {
+  opacity: 0.6;
+  filter: blur(5px);
+}
+
+.lazy-image.loaded {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.lazy-image.error {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}

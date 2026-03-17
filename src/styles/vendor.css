@@ -1,0 +1,116 @@
+/* Vendor CSS imports for Charitics theme */
+
+/* Bootstrap CSS - Core grid and utility classes */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Swiper CSS - For carousels and sliders */
+@import 'swiper/swiper-bundle.css';
+
+/* Animate.css - For animations */
+@import url('../../assets/vendor/animate-wow/animate.min.css');
+
+/* Additional vendor overrides for React integration */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bootstrap overrides for Charitics theme */
+.btn-primary {
+  background: var(--ul-gradient);
+  border: none;
+  color: var(--white);
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+.btn-primary:hover {
+  background: var(--ul-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(235, 83, 16, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--ul-primary);
+  color: var(--ul-primary);
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--ul-primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Animation overrides */
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate__fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.animate__fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+.animate__fadeInRight {
+  animation-name: fadeInRight;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

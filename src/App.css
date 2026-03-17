@@ -1,0 +1,36 @@
+/* App component styles - Charitics theme integration */
+.app {
+  min-height: 100vh;
+  background-color: var(--white);
+  color: var(--ul-p);
+  font-family: var(--font-primary);
+}
+
+.app .ul-section-heading {
+  text-align: center;
+  justify-content: center;
+}
+
+.app .ul-section-title {
+  background: var(--ul-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Demo styling for theme showcase */
+.text-center {
+  text-align: center;
+}
+
+.ms-3 {
+  margin-left: 1rem;
+}
+
+/* Ensure proper spacing for demo */
+.app .ul-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}

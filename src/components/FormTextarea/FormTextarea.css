@@ -1,0 +1,111 @@
+.form-textarea-wrapper {
+  margin-bottom: clamp(15px, 1.26vw, 24px);
+}
+
+.form-textarea-label {
+  display: block;
+  margin-bottom: clamp(8px, 0.63vw, 12px);
+  font-weight: 600;
+  color: var(--ul-black);
+  font-size: clamp(14px, 0.89vw, 17px);
+  font-family: var(--font-quicksand);
+}
+
+.form-textarea-wrapper .form-control {
+  width: 100%;
+  padding: clamp(15px, 1.26vw, 24px);
+  font-size: clamp(14px, 0.84vw, 16px);
+  line-height: 1.6;
+  color: var(--ul-black);
+  background-color: var(--white);
+  background-clip: padding-box;
+  border: 1px solid var(--ul-gray2);
+  border-radius: clamp(6px, 0.53vw, 10px);
+  transition: all 0.4s ease;
+  resize: vertical;
+  min-height: clamp(120px, 7.89vw, 150px);
+  font-family: var(--font-primary);
+}
+
+.form-textarea-wrapper .form-control:focus {
+  color: var(--ul-black);
+  background-color: var(--white);
+  border-color: var(--ul-primary);
+  outline: 0;
+  box-shadow: 0 0 0 clamp(2px, 0.21vw, 4px) rgba(235, 83, 16, 0.15);
+  transform: translateY(-1px);
+}
+
+.form-textarea-wrapper .form-control:hover:not(:focus) {
+  border-color: var(--ul-primary);
+  box-shadow: 0 2px 8px rgba(235, 83, 16, 0.1);
+}
+
+.form-textarea-wrapper .form-control.error {
+  border-color: var(--ul-primary);
+  background-color: rgba(235, 83, 16, 0.05);
+}
+
+.form-textarea-wrapper .form-control.error:focus {
+  border-color: var(--ul-primary);
+  box-shadow: 0 0 0 clamp(2px, 0.21vw, 4px) rgba(235, 83, 16, 0.25);
+}
+
+/* Mobile textarea improvements */
+@media (max-width: 768px) {
+  .form-textarea-wrapper .form-control {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 1rem;
+    min-height: 120px;
+  }
+  
+  .form-textarea-label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-textarea-wrapper {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-textarea-wrapper .form-control {
+    padding: 0.875rem;
+    min-height: 100px;
+  }
+  
+  .form-textarea-wrapper .error-message,
+  .form-textarea-wrapper .helper-text {
+    font-size: 0.875rem;
+  }
+}
+
+.form-textarea-wrapper .error-message {
+  display: block;
+  margin-top: clamp(6px, 0.42vw, 8px);
+  font-size: clamp(12px, 0.79vw, 15px);
+  color: var(--ul-primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 0.32vw, 6px);
+}
+
+.form-textarea-wrapper .error-message::before {
+  content: "⚠";
+  font-size: clamp(10px, 0.68vw, 13px);
+}
+
+.form-textarea-wrapper .helper-text {
+  display: block;
+  margin-top: clamp(6px, 0.42vw, 8px);
+  font-size: clamp(12px, 0.79vw, 15px);
+  color: var(--ul-p);
+  line-height: 1.4;
+}
+
+.form-textarea-wrapper.has-error .form-control {
+  border-color: var(--ul-primary);
+  background-color: rgba(235, 83, 16, 0.05);
+}

@@ -1,0 +1,132 @@
+/* BlogPostCard styles */
+.blog-post-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.blog-post-card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.blog-post-card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-post-card-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-card-category {
+  color: #ff5722;
+  font-weight: 600;
+}
+
+.blog-post-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.blog-post-card-excerpt {
+  font-size: 0.9375rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.blog-post-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.blog-post-card-author {
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.blog-post-card-read-more {
+  color: #ff5722;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.blog-post-card-read-more:hover {
+  color: #e64a19;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .blog-post-card-image {
+    height: 200px;
+  }
+
+  .blog-post-card-content {
+    padding: 1.25rem;
+  }
+
+  .blog-post-card-title {
+    font-size: 1.125rem;
+  }
+
+  .blog-post-card-meta {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-post-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .blog-post-card-image {
+    height: 180px;
+  }
+
+  .blog-post-card-content {
+    padding: 1rem;
+  }
+
+  .blog-post-card-title {
+    font-size: 1rem;
+  }
+
+  .blog-post-card-excerpt {
+    font-size: 0.875rem;
+  }
+
+  .blog-post-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

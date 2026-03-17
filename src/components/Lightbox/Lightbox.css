@@ -1,0 +1,212 @@
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 37, 47, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-close {
+  position: fixed;
+  top: clamp(20px, 2.1vw, 40px);
+  right: clamp(20px, 2.1vw, 40px);
+  background: rgba(235, 83, 16, 0.9);
+  color: var(--white);
+  border: none;
+  width: clamp(50px, 3.15vw, 60px);
+  height: clamp(50px, 3.15vw, 60px);
+  border-radius: 50%;
+  font-size: clamp(24px, 1.68vw, 32px);
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  z-index: 2001;
+  font-weight: 300;
+  box-shadow: 0 8px 25px rgba(235, 83, 16, 0.3);
+}
+
+.lightbox-close:hover {
+  background: var(--ul-black);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 12px 35px rgba(30, 37, 47, 0.4);
+}
+
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ul-primary);
+  border: 1px solid rgba(235, 83, 16, 0.2);
+  width: clamp(60px, 3.68vw, 70px);
+  height: clamp(60px, 3.68vw, 70px);
+  border-radius: 50%;
+  font-size: clamp(28px, 1.89vw, 36px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  z-index: 2001;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.lightbox-nav:hover {
+  background: var(--ul-primary);
+  color: var(--white);
+  border-color: var(--ul-primary);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 35px rgba(235, 83, 16, 0.4);
+}
+
+.lightbox-nav-prev {
+  left: clamp(20px, 2.1vw, 40px);
+}
+
+.lightbox-nav-next {
+  right: clamp(20px, 2.1vw, 40px);
+}
+
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(15px, 1.26vw, 24px);
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  animation: zoomIn 0.4s ease;
+  border-radius: clamp(8px, 0.63vw, 12px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox-caption {
+  color: var(--white);
+  font-size: clamp(16px, 1.05vw, 20px);
+  text-align: center;
+  padding: 0 clamp(20px, 2.1vw, 40px);
+  font-weight: 500;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: clamp(8px, 0.63vw, 12px);
+  padding: clamp(12px, 1.05vw, 20px) clamp(20px, 1.58vw, 30px);
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-counter {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(14px, 0.84vw, 16px);
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  padding: clamp(8px, 0.63vw, 12px) clamp(15px, 1.26vw, 24px);
+  border-radius: clamp(20px, 1.58vw, 30px);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .lightbox-close {
+    top: clamp(15px, 1.58vw, 30px);
+    right: clamp(15px, 1.58vw, 30px);
+    width: clamp(44px, 2.63vw, 50px);
+    height: clamp(44px, 2.63vw, 50px);
+    font-size: clamp(20px, 1.47vw, 28px);
+  }
+
+  .lightbox-nav {
+    width: clamp(50px, 3.15vw, 60px);
+    height: clamp(50px, 3.15vw, 60px);
+    font-size: clamp(24px, 1.68vw, 32px);
+  }
+
+  .lightbox-nav-prev {
+    left: clamp(15px, 1.58vw, 30px);
+  }
+
+  .lightbox-nav-next {
+    right: clamp(15px, 1.58vw, 30px);
+  }
+
+  .lightbox-caption {
+    font-size: clamp(14px, 0.95vw, 18px);
+    padding: clamp(10px, 0.84vw, 16px) clamp(15px, 1.26vw, 24px);
+  }
+
+  .lightbox-counter {
+    font-size: clamp(12px, 0.79vw, 15px);
+    padding: clamp(6px, 0.53vw, 10px) clamp(12px, 1.05vw, 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .lightbox-close {
+    top: clamp(10px, 1.26vw, 24px);
+    right: clamp(10px, 1.26vw, 24px);
+    width: clamp(40px, 2.31vw, 44px);
+    height: clamp(40px, 2.31vw, 44px);
+    font-size: clamp(18px, 1.26vw, 24px);
+  }
+
+  .lightbox-nav {
+    width: clamp(44px, 2.63vw, 50px);
+    height: clamp(44px, 2.63vw, 50px);
+    font-size: clamp(20px, 1.47vw, 28px);
+  }
+
+  .lightbox-nav-prev {
+    left: clamp(10px, 1.26vw, 24px);
+  }
+
+  .lightbox-nav-next {
+    right: clamp(10px, 1.26vw, 24px);
+  }
+
+  .lightbox-content {
+    gap: clamp(10px, 1.05vw, 20px);
+  }
+
+  .lightbox-caption {
+    font-size: clamp(13px, 0.84vw, 16px);
+    padding: clamp(8px, 0.63vw, 12px) clamp(12px, 1.05vw, 20px);
+  }
+
+  .lightbox-counter {
+    font-size: clamp(11px, 0.74vw, 14px);
+    padding: clamp(5px, 0.42vw, 8px) clamp(10px, 0.84vw, 16px);
+  }
+}

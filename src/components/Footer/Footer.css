@@ -1,0 +1,333 @@
+/* Footer Styles - Updated with new brand colors */
+.ul-footer {
+  background-color: var(--text-primary);
+  color: var(--white);
+}
+
+/* Footer Top - Contact Info */
+.ul-footer-top {
+  background-color: var(--primary);
+  padding: clamp(2rem, 4vw, 3rem) 0;
+}
+
+.ul-footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 2vw, 2rem);
+}
+
+.ul-footer-top-contact-infos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+.ul-footer-top-contact-info {
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: flex-start;
+}
+
+.ul-footer-top-contact-info-icon {
+  flex-shrink: 0;
+}
+
+.ul-footer-top-contact-info-icon-inner {
+  width: clamp(50px, 4vw, 60px);
+  height: clamp(50px, 4vw, 60px);
+  background-color: var(--secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.ul-footer-top-contact-info:hover .ul-footer-top-contact-info-icon-inner {
+  background-color: var(--white);
+  color: var(--secondary);
+  transform: scale(1.1);
+}
+
+.ul-footer-top-contact-info-txt {
+  flex: 1;
+}
+
+.ul-footer-top-contact-info-label {
+  display: block;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
+  font-weight: 500;
+}
+
+.ul-footer-top-contact-info-address {
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  color: var(--white);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.ul-footer-top-contact-info-address a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ul-footer-top-contact-info-address a:hover {
+  color: var(--secondary);
+}
+
+.ul-footer-top-contact-info-label {
+  display: block;
+  font-size: 0.875rem;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+
+.ul-footer-top-contact-info-address {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ul-footer-top-contact-info-address a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.ul-footer-top-contact-info-address a:hover {
+  color: #ff6b6b;
+}
+
+/* Footer Middle - Main Content */
+.ul-footer-middle {
+  padding: clamp(3rem, 6vw, 4rem) 0;
+  background-color: var(--text-primary);
+}
+
+.ul-footer-middle-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+/* About Section */
+.ul-footer-about {
+  max-width: 400px;
+}
+
+.ul-footer-about .logo {
+  height: clamp(40px, 4vw, 50px);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.ul-footer-about-txt {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+}
+
+.ul-footer-socials {
+  display: flex;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.ul-footer-socials a {
+  width: clamp(40px, 4vw, 44px);
+  height: clamp(40px, 4vw, 44px);
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.ul-footer-socials a:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* Footer Widgets */
+.ul-footer-widget {
+  min-width: 200px;
+}
+
+.ul-footer-widget-title {
+  color: var(--white);
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-weight: 700;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  font-family: var(--font-quicksand);
+}
+
+.ul-footer-widget-links {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.ul-footer-widget-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  transition: color 0.3s ease;
+  padding: clamp(0.25rem, 0.5vw, 0.5rem) 0;
+}
+
+.ul-footer-widget-links a:hover {
+  color: var(--secondary);
+  padding-left: 8px;
+}
+
+.ul-footer-contact-links a {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+/* Footer Bottom - Copyright */
+.ul-footer-bottom {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: clamp(1rem, 2vw, 1.5rem) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ul-footer-bottom-wrapper {
+  text-align: center;
+}
+
+.ul-footer-copyright {
+  color: var(--text-secondary);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ul-footer-top-contact-infos {
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  .ul-footer-middle-wrapper {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 2.5rem);
+    text-align: center;
+  }
+  
+  .ul-footer-about {
+    max-width: none;
+  }
+  
+  .ul-footer-socials {
+    justify-content: center;
+  }
+  
+  .ul-footer-widget-links a:hover {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .ul-footer-top-contact-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .ul-footer-socials {
+    gap: 0.5rem;
+  }
+  
+  .ul-footer-socials a {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+.ul-footer-socials a:hover {
+  background-color: #ff6b6b;
+  transform: translateY(-3px);
+}
+
+/* Footer Widget */
+.ul-footer-widget {
+  display: flex;
+  flex-direction: column;
+}
+
+.ul-footer-widget-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.ul-footer-widget-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ul-footer-widget-links a {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ul-footer-widget-links a:hover {
+  color: #ff6b6b;
+  padding-left: 0.5rem;
+}
+
+.ul-footer-contact-links a i {
+  color: #ff6b6b;
+  font-size: 1rem;
+}
+
+/* Footer Bottom - Copyright */
+.ul-footer-bottom {
+  background-color: #111;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ul-footer-bottom-wrapper {
+  text-align: center;
+}
+
+.ul-footer-copyright {
+  margin: 0;
+  color: #999;
+  font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ul-footer-top-contact-infos {
+    grid-template-columns: 1fr;
+  }
+
+  .ul-footer-middle-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .ul-footer-about {
+    max-width: 100%;
+  }
+}
