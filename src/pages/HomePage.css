@@ -24,7 +24,7 @@
   padding: clamp(4rem, 8vw, 8rem) 0;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  overflow: clip;
   min-height: 60vh;
   display: flex;
   align-items: center;
@@ -54,7 +54,7 @@
   z-index: 1;
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 clamp(1rem, 4vw, 2rem);
 }
 
 .banner-subtitle {

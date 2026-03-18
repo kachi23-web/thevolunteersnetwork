@@ -1,7 +1,7 @@
 /* Page transition styles */
 .page-transition-wrapper {
   width: 100%;
-  min-height: 100vh;
+  flex: 1;
 }
 
 /* Loading state styles */

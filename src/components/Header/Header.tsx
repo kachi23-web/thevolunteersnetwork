@@ -23,6 +23,21 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // FIX: Lock body scroll when mobile menu or search is open
+  // This prevents the page from scrolling behind the overlay,
+  // and also stops the sidebar/modal from contributing to document height.
+  useEffect(() => {
+    if (isMobileMenuOpen || isSearchOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen, isSearchOpen])
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
     onMenuToggle?.()
@@ -47,7 +62,7 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
         <div className="ul-sidebar-header">
           <div className="ul-sidebar-header-logo">
             <Link to="/" onClick={closeMobileMenu}>
-              <img src="/assets/img/logo.svg" alt="The Volunteer Nations Logo" className="logo" />
+              <img src="src/assets/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" />
             </Link>
           </div>
           <button className="ul-sidebar-closer" onClick={closeMobileMenu}>
@@ -97,11 +112,11 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
       <header className="ul-header">
         <div className={`ul-header-bottom ${isSticky ? 'to-be-sticky' : ''}`}>
           <div className="ul-header-bottom-wrapper ul-header-container">
-            <div className="logo-container">
+            {/* <div className="logo-container">
               <Link to="/">
-                <img src="/assets/img/logo.svg" alt="The Volunteer Nations Logo" className="logo" />
+                <img src="src/assets/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" />
               </Link>
-            </div>
+            </div> */}
 
             {/* Desktop Navigation */}
             <div className="ul-header-nav-wrapper">

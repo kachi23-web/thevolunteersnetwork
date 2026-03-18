@@ -26,13 +26,11 @@
 .ul-header-bottom.to-be-sticky {
   position: fixed;
   top: 0;
-  background-color: var(--primary);
-  box-shadow: 0 0 20px rgba(30, 106, 165, 0.3);
-  z-index: 1000;
-  width: 100%;
-  overflow-x: hidden;
   left: 0;
-  right: 0;
+  width: 100%;
+  background-color: var(--primary);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
 
 .ul-header-container {
@@ -651,25 +649,25 @@
 .ul-sidebar {
   position: fixed;
   top: 0;
-  left: -300px;
+  left: 0;
   width: min(300px, 85vw);
   height: 100vh;
   background: var(--white, #fff);
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 2000;
   display: flex;
   flex-direction: column;
   padding: clamp(20px, 1.58vw, 30px);
-  justify-content: flex-start;
   gap: 20px;
   border-left: 2px solid var(--ul-primary, #EB5310);
-  overflow: auto;
-  backdrop-filter: blur(10px);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .ul-sidebar.active {
-  left: 0;
+  transform: translateX(0);
   box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -836,13 +834,9 @@
 
 .ul-sidebar-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1999;
-  transition: opacity 0.4s ease;
   backdrop-filter: blur(2px);
 }
 
@@ -883,23 +877,28 @@
 /* Search Modal */
 .ul-search-form-wrapper {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.6);
   inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   z-index: 3000;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   flex-direction: column;
   gap: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .ul-search-form-wrapper.active {
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
 }
 
