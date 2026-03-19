@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { visualizer } from 'rollup-plugin-visualizer'
 import type { Plugin } from 'vite'
+import path from 'path'
+import fs from 'fs'
 
 // Strips sourceMappingURL from vendored minified files to suppress missing .map warnings
 function stripSourceMapComments(): Plugin {
@@ -15,11 +17,32 @@ function stripSourceMapComments(): Plugin {
   }
 }
 
+// Serves the root-level assets/ folder at /assets/ in dev
+function serveRootAssets(): Plugin {
+  return {
+    name: 'serve-root-assets',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.url?.startsWith('/assets/')) {
+          const filePath = path.join(process.cwd(), req.url)
+          if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+            res.setHeader('Cache-Control', 'no-cache')
+            fs.createReadStream(filePath).pipe(res)
+            return
+          }
+        }
+        next()
+      })
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     stripSourceMapComments(),
+    serveRootAssets(),
     // Bundle analyzer - only in analyze mode
     mode === 'analyze' && visualizer({
       open: true,
@@ -140,6 +163,10 @@ export default defineConfig(({ mode }) => ({
     open: true,
     watch: {
       ignored: ['**/src/oldfiles/**', '**/*.html', '!**/index.html'],
+    },
+    // Serve root-level assets/ folder at /assets/
+    fs: {
+      allow: ['.'],
     },
   },
   // Preview configuration

@@ -36,7 +36,7 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
         <div className="ul-sidebar-header">
           <div className="ul-sidebar-header-logo">
             <Link to="/" onClick={closeMobileMenu}>
-              <img src="src/assets/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" />
+              <img src="/assets/img/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" width="100" height="50" style={{ height: 'auto' }} />
             </Link>
           </div>
           <button className="ul-sidebar-closer" onClick={closeMobileMenu} aria-label="Close menu">
@@ -88,7 +88,7 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
           <div className="ul-header-bottom-wrapper ul-header-container">
             <div className="logo-container">
               <Link to="/">
-                <img src="src/assets/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" />
+                <img src="/assets/img/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" width="110" height="35" style={{ height: 'auto' }} />
               </Link>
             </div>
 
