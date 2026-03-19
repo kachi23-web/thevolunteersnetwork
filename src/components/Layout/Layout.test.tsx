@@ -38,8 +38,6 @@ describe('Layout integrity', () => {
     it('html element has overflow-x: hidden to prevent horizontal scrollbar', () => {
       renderLayout();
       // The global.css sets html { overflow-x: hidden } — verify the rule exists
-      // by checking the computed style applied via the stylesheet
-      const htmlStyle = window.getComputedStyle(document.documentElement);
       // jsdom applies inline styles; we verify the layout-wrapper has no fixed width > 100%
       const { container } = renderLayout();
       const layoutWrapper = container.querySelector('.layout-wrapper');

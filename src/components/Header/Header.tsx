@@ -13,47 +13,21 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
   const [isSticky, setIsSticky] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
-  // Sticky header functionality - listen to window scroll
   useEffect(() => {
-    const handleScroll = () => {
-      setIsSticky(window.scrollY > 100)
-    }
-
+    const handleScroll = () => setIsSticky(window.scrollY > 100)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // FIX: Lock body scroll when mobile menu or search is open
-  // This prevents the page from scrolling behind the overlay,
-  // and also stops the sidebar/modal from contributing to document height.
   useEffect(() => {
-    if (isMobileMenuOpen || isSearchOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
-    // Cleanup on unmount
-    return () => {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = isMobileMenuOpen || isSearchOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [isMobileMenuOpen, isSearchOpen])
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-    onMenuToggle?.()
-  }
-
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen)
-  }
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false)
-  }
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen)
-  }
+  const toggleMobileMenu = () => { setIsMobileMenuOpen(v => !v); onMenuToggle?.() }
+  const toggleSearch = () => setIsSearchOpen(v => !v)
+  const closeMobileMenu = () => setIsMobileMenuOpen(false)
+  const toggleDropdown = () => setIsDropdownOpen(v => !v)
 
   return (
     <>
@@ -65,7 +39,7 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
               <img src="src/assets/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" />
             </Link>
           </div>
-          <button className="ul-sidebar-closer" onClick={closeMobileMenu}>
+          <button className="ul-sidebar-closer" onClick={closeMobileMenu} aria-label="Close menu">
             <i className="flaticon-close"></i>
           </button>
         </div>
@@ -95,7 +69,7 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
 
       {/* Search Modal */}
       <div className={`ul-search-form-wrapper ${isSearchOpen ? 'active' : ''}`}>
-        <button className="ul-search-closer" onClick={toggleSearch}>
+        <button className="ul-search-closer" onClick={toggleSearch} aria-label="Close search">
           <i className="flaticon-close"></i>
         </button>
         <form className="ul-search-form" onSubmit={(e) => e.preventDefault()}>
@@ -112,21 +86,17 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
       <header className="ul-header">
         <div className={`ul-header-bottom ${isSticky ? 'to-be-sticky' : ''}`}>
           <div className="ul-header-bottom-wrapper ul-header-container">
-            {/* <div className="logo-container">
+            <div className="logo-container">
               <Link to="/">
                 <img src="src/assets/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" />
               </Link>
-            </div> */}
+            </div>
 
             {/* Desktop Navigation */}
             <div className="ul-header-nav-wrapper">
               <nav className="ul-header-nav">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>
-                  Home
-                </NavLink>
-                <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>
-                  About
-                </NavLink>
+                <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
+                <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
                 <div className={`has-sub-menu ${isDropdownOpen ? 'active' : ''}`}>
                   <a role="button" onClick={toggleDropdown}>Pages</a>
                   <div className="ul-header-submenu">
@@ -139,18 +109,10 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
                     </ul>
                   </div>
                 </div>
-                <NavLink to="/donations" className={({ isActive }) => isActive ? 'active' : ''}>
-                  Donations
-                </NavLink>
-                <NavLink to="/events" className={({ isActive }) => isActive ? 'active' : ''}>
-                  Events
-                </NavLink>
-                <NavLink to="/blog" className={({ isActive }) => isActive ? 'active' : ''}>
-                  Blog
-                </NavLink>
-                <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>
-                  Contact
-                </NavLink>
+                <NavLink to="/donations" className={({ isActive }) => isActive ? 'active' : ''}>Donations</NavLink>
+                <NavLink to="/events" className={({ isActive }) => isActive ? 'active' : ''}>Events</NavLink>
+                <NavLink to="/blog" className={({ isActive }) => isActive ? 'active' : ''}>Blog</NavLink>
+                <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
               </nav>
             </div>
 
