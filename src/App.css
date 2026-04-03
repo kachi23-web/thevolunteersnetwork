@@ -28,7 +28,7 @@
 }
 
 /* Ensure proper spacing for demo */
-.app .ul-container {
+.app > .ul-container {
   display: flex;
   align-items: center;
   justify-content: center;

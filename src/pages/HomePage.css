@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 100%;
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 /* Accessibility improvements */
@@ -24,10 +25,11 @@
   padding: clamp(4rem, 8vw, 8rem) 0;
   text-align: center;
   position: relative;
-  overflow: clip;
+  overflow: hidden;
   min-height: 60vh;
   display: flex;
   align-items: center;
+  contain: layout style;
 }
 
 .banner-section::before {
@@ -772,6 +774,7 @@
   cursor: pointer;
   transition: transform 0.3s ease;
   background: var(--ul-gray2);
+  isolation: isolate;
 }
 
 .gallery-item::before {

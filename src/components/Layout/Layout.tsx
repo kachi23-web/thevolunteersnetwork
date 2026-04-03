@@ -6,6 +6,7 @@ import { SEO } from '../SEO/SEO'
 import { SkipToContent } from '../SkipToContent/SkipToContent'
 import { PageTransition } from '../PageTransition/PageTransition'
 import { smoothPageTransitionVariants } from '../../utils/animations'
+import './Layout.css'
 
 interface LayoutProps {
   children: ReactNode

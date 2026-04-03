@@ -2,6 +2,7 @@
 .page-transition-wrapper {
   width: 100%;
   flex: 1;
+  overflow-x: clip;
 }
 
 /* Loading state styles */

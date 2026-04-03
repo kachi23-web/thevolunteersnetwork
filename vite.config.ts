@@ -21,15 +21,30 @@ function stripSourceMapComments(): Plugin {
 function serveRootAssets(): Plugin {
   return {
     name: 'serve-root-assets',
+    enforce: 'pre', // run before other plugins
     configureServer(server) {
-      server.middlewares.use((req, res, next) => {
-        if (req.url?.startsWith('/assets/')) {
-          const filePath = path.join(process.cwd(), req.url)
-          if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-            res.setHeader('Cache-Control', 'no-cache')
-            fs.createReadStream(filePath).pipe(res)
-            return
+      server.middlewares.use('/assets', (req, res, next) => {
+        const filePath = path.join(process.cwd(), 'assets', req.url || '')
+        if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+          const ext = path.extname(filePath).toLowerCase()
+          const mimeTypes: Record<string, string> = {
+            '.png': 'image/png',
+            '.jpg': 'image/jpeg',
+            '.jpeg': 'image/jpeg',
+            '.svg': 'image/svg+xml',
+            '.gif': 'image/gif',
+            '.webp': 'image/webp',
+            '.ico': 'image/x-icon',
+            '.css': 'text/css',
+            '.js': 'application/javascript',
+            '.woff': 'font/woff',
+            '.woff2': 'font/woff2',
+            '.ttf': 'font/ttf',
           }
+          res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream')
+          res.setHeader('Cache-Control', 'no-cache')
+          fs.createReadStream(filePath).pipe(res)
+          return
         }
         next()
       })

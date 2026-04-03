@@ -35,10 +35,21 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
       <div className={`ul-sidebar ${isMobileMenuOpen ? 'active' : ''}`}>
         <div className="ul-sidebar-header">
           <div className="ul-sidebar-header-logo">
+            
             <Link to="/" onClick={closeMobileMenu}>
-              <img src="/assets/img/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" width="100" height="50" style={{ height: 'auto' }} />
+            {/* <img 
+              src="src/assets/tvn-logo.png" 
+              alt="The Volunteer Nations Logo" 
+              className="logo" 
+              width="90" 
+              height="45"
+              style={{ width: '90px', height: '45px', objectFit: 'contain' }} 
+/> */}
+              {/* <img src="/assets/img/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" width="100" height="50" style={{ height: 'auto' }} /> */}
             </Link>
           </div>
+
+
           <button className="ul-sidebar-closer" onClick={closeMobileMenu} aria-label="Close menu">
             <i className="flaticon-close"></i>
           </button>
@@ -88,7 +99,7 @@ export const Header = ({ onMenuToggle }: HeaderProps) => {
           <div className="ul-header-bottom-wrapper ul-header-container">
             <div className="logo-container">
               <Link to="/">
-                <img src="/assets/img/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" width="110" height="35" style={{ height: 'auto' }} />
+                <img src="src/assets/tvn-logo.png" alt="The Volunteer Nations Logo" className="logo" width="110" height="35" style={{ height: 'auto' }} />
               </Link>
             </div>
 

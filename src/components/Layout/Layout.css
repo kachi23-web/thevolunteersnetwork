@@ -1,1 +1,5 @@
 /* Layout styles are defined in src/styles/global.css */
+
+.main-content {
+  overflow-x: clip;
+}

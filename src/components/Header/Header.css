@@ -53,12 +53,19 @@
 .logo-container {
   position: relative;
   z-index: 1;
+   display: flex;
+    align-items: center;
+    height: 70px;        /* fix the header height */
+    overflow: hidden;
 }
 
 .logo-container img {
   max-width: clamp(50px, 6vw, 110px);
   height: auto;
   width: 100%;
+  max-height: 55px;    /* prevent overflow */
+  width: auto;
+  object-fit: contain;
 }
 
 .logo-container::before,
